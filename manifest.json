@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "AI Recognizer",
+  "version": "1.0",
+  "description": "Instantly identify if an image is AI-generated or real.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ]
+}
